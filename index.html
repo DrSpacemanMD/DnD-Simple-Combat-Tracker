@@ -1,0 +1,45 @@
+<html lang="en">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="Functions.js"></script>
+
+
+<head>
+  <h1> D&D Simple Combat Tracker </h1>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+  <template id="GameElement">
+    <div class="GameElementDiv" style="background-color:grey">
+        <p id="name">Name: Unnamed</p>
+        <p id="initiative">Initiative: 0</p>
+        <button onclick="AdjustHealth(-1,this)">Decrease Health</button>
+        <input id="health" type="text" name="Health" value="" onkeydown="javascript: if (event.keyCode==13) ValidateInput(this); return event.keyCode == 69 || event.keyCode == 190  ? false : true">
+        <button onclick="AdjustHealth(1,this)">Increase Health</button>      
+        <button onclick="RemoveElement(this)">Remove</button>    
+    </div>
+  </template>
+
+
+<body>
+
+
+
+  <div class="InputGameElement" style="background-color:grey">
+        <input id="InputName" type="text" name="Name" placeholder="Name">
+        <input id="InputInitiative" type="number" name="Initiative" placeholder="Initiative Roll" onkeydown="javascript: if (event.keyCode==13) AddToList(); return event.keyCode == 69 || event.keyCode == 190  ? false : true">
+        <input id="InputHealth" type="number" name="Health" placeholder="Max Health" onkeydown="javascript:   if (event.keyCode==13) AddToList(); return event.keyCode == 69 || event.keyCode == 190  ? false : true">
+  </div>
+  <button onclick="AddToList()">Add Game Element</button>
+  <button onclick="ClearAllElements()">Clear All</button>
+  <button onclick="ProgressTurn(-1)">Prev</button>
+  <button onclick="ProgressTurn(1)">Next</button>
+
+
+
+  <ul id="GameElementList" style="list-style-type:none;">
+  </ul>
+
+
+</body>
+
+  
