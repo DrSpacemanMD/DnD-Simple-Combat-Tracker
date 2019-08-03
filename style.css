@@ -1,6 +1,8 @@
 body {
-  background-color: lightblue;
+  background-color: black;
   background-image:url("https://github.com/DrSpacemanMD/DnD-Simple-Combat-Tracker/raw/master/Background.png");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
 }
 
 h1 {
