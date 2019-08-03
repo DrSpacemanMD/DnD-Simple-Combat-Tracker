@@ -45,7 +45,7 @@ h1 {
 }
 .InputButtons
 {
-	width: 400px;
+	width: 470px;
 }
 
 
@@ -89,4 +89,9 @@ h1 {
 .myButton:active {
 	position:relative;
 	top:1px;
+}
+
+.HelpText
+{
+	Width:600px;
 }
