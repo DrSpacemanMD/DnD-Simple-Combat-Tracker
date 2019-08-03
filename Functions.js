@@ -106,13 +106,13 @@
     
     function RemoveElement(el)
     {
-    	if (el.parentElement.style.backgroundColor=="red")
+    	if (el.parentElement.style.backgroundColor=="DarkRed")
     		ProgressTurn(1);
     	el.parentElement.remove();
 		var ElementsInPlay = document.getElementById("GameElementList").querySelectorAll(".GameElementDiv");  
 		for (var i = 0; i < ElementsInPlay.length; i++) 
 		{
-			if (ElementsInPlay[i].style.backgroundColor == "red")
+			if (ElementsInPlay[i].style.backgroundColor == "DarkRed")
 			{
 				SelectedIndex=i;
 				break;
@@ -212,7 +212,8 @@
 	 		  if (SelectedIndex < 0)
 	 		  	SelectedIndex=ElementsInPlay.length-1;
 
-	 		  ElementsInPlay[SelectedIndex].style.backgroundColor="red";
+	 		  ElementsInPlay[SelectedIndex].style.backgroundColor="DarkRed";
+	 		  ElementsInPlay[SelectedIndex].scrollIntoView();
     }
 
  document.onkeydown = function(event) 
