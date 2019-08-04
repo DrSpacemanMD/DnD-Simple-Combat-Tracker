@@ -19,7 +19,7 @@
   <template id="GameElement">
     <div class="GameElementDiv" style="background-color:grey">
         <p id="name">Name: Unnamed</p>
-        <p id="initiative">Initiative: 0</p>
+        <!-- <p id="initiative">Initiative: 0</p> -->
         <button class="myButton" onclick="AdjustHealth(-1,this)">Decrease Health</button>
         <input id="health" type="text" name="Health" value="" onkeydown="javascript: if (event.keyCode==13) ValidateInput(this); return event.keyCode == 69 || event.keyCode == 190  ? false : true">
         <button class="myButton" onclick="AdjustHealth(1,this)">Increase Health</button>      
@@ -36,7 +36,7 @@
         <input id="InputName" type="text" name="Name" placeholder="Name">
         <input id="InputInitiative" type="number" name="Initiative" placeholder="Initiative Roll" onkeydown="javascript: if (event.keyCode==13) AddToList(); return event.keyCode == 69 || event.keyCode == 190  ? false : true">
         <input id="InputHealth" type="number" name="Health" placeholder="Max Health" onkeydown="javascript:   if (event.keyCode==13) AddToList(); return event.keyCode == 69 || event.keyCode == 190  ? false : true">
-         
+        <input id="AC" type="number" name="AC" placeholder="AC (optional)" onkeydown="javascript:   if (event.keyCode==13) AddToList(); return event.keyCode == 69 || event.keyCode == 190  ? false : true">
   </div>
 
   <div class="InputButtons">

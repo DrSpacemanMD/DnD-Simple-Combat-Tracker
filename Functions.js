@@ -10,7 +10,7 @@
 		var InputName = document.getElementById("InputName").value;
 		var InputInit = document.getElementById("InputInitiative").value;
 		var InputHealth = document.getElementById("InputHealth").value;
-
+		var AC = document.getElementById("AC").value;
 
 
 		if (InputName == "")
@@ -48,14 +48,25 @@
 			alert("Initiative must be greater than 0");  	
 			return; 
 			}
+		if (parseFloat(InputInit)<0)
+			{
+			alert("AC must be greater than 0");  	
+			return; 
+			}
+		
 
 		document.getElementById("InputName").value ="";
 		document.getElementById("InputInitiative").value ="";
 		document.getElementById("InputHealth").value ="";
+		document.getElementById("AC").value ="";
+		
 
+		var text = "Name: " + InputName + "&emsp; &emsp;Initiative: " + InputInit
+		if (AC != "")
+			text +="&emsp; &emsp;AC: " + AC;
 
-		t.content.querySelector('#name').innerHTML  ="Name: " + InputName;
-    	t.content.querySelector('#initiative').innerHTML  ="Initiative: " + InputInit;
+		t.content.querySelector('#name').innerHTML  =text;
+    	//t.content.querySelector('#initiative').innerHTML  ="Initiative: " + InputInit;
     	t.content.querySelector('#health').value  = InputHealth;
     	var GElist = document.getElementById("GameElementList");
 	 	var clone = document.importNode(t.content, true);
@@ -71,8 +82,8 @@
 	 		var NodeToUse;
 	 		for (var i = 0; i < ElementsInPlay.length; i++) 
 			 	{
-			 		
-			 		var InitTxt = ElementsInPlay[i].querySelectorAll("#initiative")[0].innerHTML.split(" ")[1] ;
+			 		var test = ElementsInPlay[i].querySelectorAll("#name")[0].innerHTML.split(" ");
+			 		var InitTxt = ElementsInPlay[i].querySelectorAll("#name")[0].innerHTML.split(" ")[3] ;
 			 		var NewElem = parseFloat(InputInit);
 			 		var ExistingElem = parseFloat(InitTxt);
 			 		if (NewElem>ExistingElem)
